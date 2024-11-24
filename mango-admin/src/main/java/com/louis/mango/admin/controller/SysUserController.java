@@ -32,4 +32,9 @@ public class SysUserController {
     public Object findAll() {
         return sysUserService.findAll();
     }
+    
+    @PostMapping(value="/findPage")
+	public HttpResult findPage(@RequestBody PageRequest pageRequest) {
+		return HttpResult.ok(sysUserService.findPage(pageRequest));
+	}
 }

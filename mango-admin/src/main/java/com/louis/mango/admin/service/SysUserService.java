@@ -8,7 +8,7 @@ import com.louis.mango.admin.model.SysUser;
 import com.louis.mango.core.page.PageRequest;
 import com.louis.mango.core.service.CurdService;
 
-public interface SysUserService {
+public interface SysUserService extends CurdService<SysUser>{
 
     /**
      * 查找所有用户
@@ -16,6 +16,4 @@ public interface SysUserService {
      */
     List<SysUser> findAll();
     
-
-
 }

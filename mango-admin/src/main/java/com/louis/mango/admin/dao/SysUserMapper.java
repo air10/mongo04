@@ -46,4 +46,6 @@ public interface SysUserMapper {
      * @return
      */
     List<SysUser> findAll();
+    
+    List<SysUser> findPage();
 }

@@ -2,6 +2,7 @@ server:
   port: 8081
 
 
+# 数据源druid的配置
 spring: 
   datasource:
     name: druidDataSource
@@ -25,3 +26,10 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
+
+# mongo-core项目内 com.github.pagehelper 分页组件的配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
