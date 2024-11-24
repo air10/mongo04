@@ -1,4 +1,4 @@
-package com.louis.mango.controller;
+package com.louis.mango.admin.controller;
 
 import java.io.File;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.louis.mango.admin.model.SysUser;
-import com.louis.mango.service.SysUserService;
+import com.louis.mango.admin.service.SysUserService;
 import com.louis.mango.common.utils.FileUtils;
 import com.louis.mango.core.http.HttpResult;
 import com.louis.mango.core.page.PageRequest;

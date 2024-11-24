@@ -1,4 +1,4 @@
-package com.louis.mango.service;
+package com.louis.mango.admin.service;
 
 import java.io.File;
 import java.util.List;
