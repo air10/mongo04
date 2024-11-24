@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	
+	<context id="testTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<!-- 
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@150.16.17.22:1521/wsbs" userId="hr"
+			password="hr123">
+		</jdbcConnection>-->
+		<!-- <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/mango?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai" 
+			userId="root"
+			password="123a123b">
+		</jdbcConnection>  -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/mango?characterEncoding=utf8&amp;autoReconnect=true&amp;serverTimezone=PRC"
+                        userId="root" password="123a123b">
+        <property name="nullCatalogMeansCurrent" value="true"/>
+
+    	</jdbcConnection>
+
+ 
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+ 
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.louis.mango.admin.model"
+			targetProject="mango">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.louis.mango.admin.sqlmap" 
+			targetProject="mango">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.louis.mango.admin.dao" 
+			targetProject="mango">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		<!--<table tableName="items"></table> -->
+		 <table  tableName="sys_user"
+                enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" catalog="mango">
+            <property name="useActualColumnNames" value="false"></property>
+            <property name="ignoreQualifiersAtRuntime" value="true"></property>
+        </table>
+        <table  tableName="sys_dict"
+                enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" catalog="mango">
+            <property name="useActualColumnNames" value="false"></property>
+            <property name="ignoreQualifiersAtRuntime" value="true"></property>
+        </table>
+        	<!--生成mapper.xml时覆盖原文件-->
+	
+    	
+	</context>
+
+	
+</generatorConfiguration>
