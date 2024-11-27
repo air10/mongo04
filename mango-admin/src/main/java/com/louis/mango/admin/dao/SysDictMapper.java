@@ -1,5 +1,9 @@
 package com.louis.mango.admin.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.louis.mango.admin.model.SysDict;
 
 public interface SysDictMapper {
@@ -39,4 +43,10 @@ public interface SysDictMapper {
 	 * @mbg.generated  Sun Nov 24 23:22:54 CST 2024
 	 */
 	int updateByPrimaryKey(SysDict record);
+	
+    List<SysDict> findPage();
+    
+    List<SysDict> findPageByLabel(@Param(value="label") String label);
+
+    List<SysDict> findByLable(@Param(value="label") String label);
 }
