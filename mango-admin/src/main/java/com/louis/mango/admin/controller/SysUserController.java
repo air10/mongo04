@@ -32,9 +32,16 @@ public class SysUserController {
     public Object findAll() {
         return sysUserService.findAll();
     }
-    
+     
     @PostMapping(value="/findPage")
-	public HttpResult findPage(@RequestBody PageRequest pageRequest) {
-		return HttpResult.ok(sysUserService.findPage(pageRequest));
+   	public HttpResult findPage(@RequestBody PageRequest pageRequest) {
+   		return HttpResult.ok(sysUserService.findPage(pageRequest));
+   	}
+    
+    @PostMapping(value="/exportExcelUser")
+	public void exportExcelUser(@RequestBody PageRequest pageRequest,HttpServletResponse res) {
+    	File file=sysUserService.createUserExcelFile(pageRequest);
+    	FileUtils.downloadFile(res, file, file.getName());
 	}
+    
 }

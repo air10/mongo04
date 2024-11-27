@@ -15,5 +15,10 @@ public interface SysUserService extends CurdService<SysUser>{
      * @return
      */
     List<SysUser> findAll();
-    
+    /**
+	 * 生成用户信息Excel文件
+	 * @param pageRequest 要导出的分页查询参数
+	 * @return
+	 */
+	File createUserExcelFile(PageRequest pageRequest);
 }
