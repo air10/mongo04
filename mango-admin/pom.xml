@@ -99,10 +99,10 @@
 		</dependency> 
 		
 		<!--consul-->
-<!-- 		<dependency>
+ 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-		</dependency>		 -->
+		</dependency>		
 		<!-- <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>

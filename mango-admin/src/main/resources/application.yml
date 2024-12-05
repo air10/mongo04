@@ -33,7 +33,12 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
-
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name} # 注册到consul的服务名称
 # mongo-core项目内 com.github.pagehelper 分页组件的配置
 pagehelper:
   helperDialect: mysql
