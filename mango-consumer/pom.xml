@@ -69,10 +69,10 @@
 		    <artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<!--hystrix-dashboard-->
-		<!-- <dependency>
+		 <dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-		</dependency> -->
+		</dependency> 
 		
 		<!-- zipkin -->
 		<!-- <dependency>
